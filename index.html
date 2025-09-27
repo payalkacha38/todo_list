@@ -26,7 +26,8 @@
     animation: fadeIn 0.6s ease-in-out;
     border: 1px solid rgba(255,255,255,0.3);
   }
-  @keyframes fadeIn { from { opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+  @keyframes fadeIn { from { opacity:0; 
+  transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
   h1 { text-align:center; margin-bottom:20px; color:white; text-shadow:1px 1px 2px #000; }
   .add-btn { display:block; width:100%; padding:12px; background: linear-gradient(120deg, #9132f7, #2575fc); color:white; font-size:1.1em; border:none; border-radius:8px; cursor:pointer; transition:0.3s; margin-bottom:12px; }
   .add-btn:hover { background: linear-gradient(135deg, #2575fc, #490197); transform: scale(1.03); }
@@ -69,6 +70,139 @@
   #viewTasksModal .modal-content { background: linear-gradient(135deg, #056ba1, #01665d); color:white; max-height:80vh; overflow-y:auto; }
   #viewTasksModal ul li { padding:8px; border-radius:6px; margin:6px 0; background: rgba(255,255,255,0.15); display:flex; justify-content:space-between; align-items:center; flex-direction:column; }
   #viewTasksModal ul li button { margin-top:6px; padding:8px 20px; font-weight:bold; border:none; border-radius:6px; cursor:pointer; transition:0.2s; justify-content:space-between;}
+
+  /* 📱 RESPONSIVE DESIGN */
+
+/* Tablets & smaller laptops */
+@media (max-width: 1024px) {
+  .todo-container {
+    max-width: 90%;
+    padding: 50px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .add-btn {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  li {
+    font-size: 1em;
+    padding: 12px;
+  }
+}
+
+/* Tablets & large phones */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+    align-items: center;
+  }
+
+  .todo-container {
+    width: 100%;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  .add-btn {
+    font-size: 0.95em;
+    padding: 10px;
+  }
+
+  .task-row span {
+    font-size: 1em;
+  }
+
+  .actions button {
+    font-size: 0.8em;
+    padding: 5px 8px;
+  }
+
+  .deleted-container {
+    padding: 10px;
+  }
+
+  .modal-content {
+    padding: 20px;
+    width: 95%;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+    align-items: stretch;
+  }
+
+  .todo-container {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
+
+  .add-btn {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  li {
+    padding: 10px;
+    font-size: 0.9em;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .actions button {
+    margin: 4px 4px 0 0;
+    font-size: 0.8em;
+    padding: 6px 10px;
+  }
+
+  small {
+    font-size: 0.7em;
+  }
+
+  .modal-content {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .modal-actions button {
+    width: 100%;
+    font-size: 0.9em;
+    padding: 10px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -261,3 +395,4 @@ renderTasks();
 </script>
 </body>
 </html>
+
